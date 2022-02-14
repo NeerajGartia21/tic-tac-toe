@@ -3,6 +3,7 @@ var http = require('http');
 
 var app = express();
 var server = http.createServer(app);
+require('dotenv').config()
 
 var io = require('socket.io')(server);
 var path = require('path');
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 
-var name;
+
 
 io.on('connection', (socket) => {
   socket.on('player-joined',function(msg){
@@ -29,7 +30,9 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(3000, () => {
+console.log(process.env.PORT)
+
+server.listen(process.env.PORT, () => {
   console.log('Server listening on :3000');
 });
 
