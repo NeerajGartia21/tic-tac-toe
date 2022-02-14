@@ -5,29 +5,45 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel = "stylesheet" href="style.css">
-	<script>
-		var name = prompt("Please enter your name");
-	</script>
 </head>
 <body>
     
-    <div id="intro">
-      <h1>ChatRoom</h1>
-    </div>
-    
-    <ul id="messages"></ul>
-    
-    <form action="">
-      <input id="m" placeholder="Enter your message..." autocomplete="off" required /><button>Send</button>
-    </form>
+    <div class="box">
+    <h1>Tic Tac Toe</h1>
 
-    <script src="/socket.io/socket.io.js"></script>
+	<button onclick="createRoom()" id="create-room">Create Room</button>
+
+	<input id="room-id" type="text" placeholder="room-id">
+	<button onclick="joinRoom()" id="join-room">Join Room</button>
+	
+   <!--  <button onclick="reset();">Reset</button> -->
+
+   <!--  <div id="Turn">
+        choose who will start:
+        <br>
+        <button onclick="chooseTurn(this)">Computer</button>
+        <button onclick="chooseTurn(this)">Me</button>
+    </div> -->
+    <!-- <div class="container">
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="1">1</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="2">2</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="3">3</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="4">4</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="5">5</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="6">6</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="7">7</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="8">8</div>
+		<div onclick="multiPlayer(this);" style="color: transparent;" class="box" id="9">9</div>
+    </div> -->
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 		
-    		var socket = io();
+    		/* var socket = io(); */
 
-    		socket.emit('joining msg', name);
+    		/* socket.emit('joining msg', name);
 
     		$('form').submit(function(e) {
     			e.preventDefault();            // will prevent page reloading
@@ -39,7 +55,8 @@
     		socket.on('chat message', function(msg){
       			$('#messages').append($('<li>').text(msg));
     		});
-  		
+  		 */
     </script>
-</body>
+	<!-- <script src="./script.js"></script> -->
+	<script src="./socket.js"></script>
 </html>

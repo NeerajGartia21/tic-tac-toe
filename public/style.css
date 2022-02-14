@@ -1,62 +1,65 @@
- * { 
-	margin: 0; 
-	padding: 0; 
-	box-sizing: border-box; 
-}
- 
-  #intro{
- 	background-color: #008000;
- 	color: #FFFFFF;
- 	height: 5%;	
- } 
-
-
- body { 
- 	font: 20px;
-}
-
- 
- 
- form { 
- 	background: #000000; 
- 	padding: 3px; 
- 	position: fixed; 
- 	bottom: 5px; 
- 	width: 100%; 
- }
- 
- form input { 
- 	background-color: #e6ffe6;
- 	border: 0; 
- 	padding: 10px; 
- 	width: 90%; 
- 	margin-right: 0.5%; 
- }
- 
- form button { 
- 	width: 9%; 
- 	background: #00e600;
- 	border: none; 
- 	padding: 5px; 
- 	font-size: 20px; 
- }
- 
- #messages { 
-
- 	margin: 0; 
- 	padding: 0; 
- 	
- }
- 
- #messages li { 
- 	padding: 5px 10px; 
- }
- 
- #messages li:nth-child(odd) { 
- 	background: #b3ffb3; 
- }
-
-
-#list{
-	text-align: right;
-}
+.box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+			flex-direction: column;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+  }
+  
+  .box button {
+	color: black;
+	background-color: darkcyan;
+	font-weight: bold;
+	border-radius: 50px;
+	font-size: 1rem;
+	padding: 0.5rem;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+  }
+  
+  .box #Turn {
+	padding: 2rem;
+	font-size: 1.5rem;
+  }
+  
+  .box .container {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 5rem 5rem 5rem;
+		grid-template-columns: 5rem 5rem 5rem;
+	grid-gap: 1rem;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+  }
+  
+  .box .container > div {
+	width: 5rem;
+	color: red;
+	font-size: 50px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	height: 5rem;
+	background-color: cyan;
+	border: 2px solid black;
+	border-radius: 10px;
+  }
+  /*# sourceMappingURL=style.css.map */

@@ -18,21 +18,15 @@ app.get('/', (req, res) => {
 var name;
 
 io.on('connection', (socket) => {
-  console.log('new user connected');
-  
-  socket.on('joining msg', (username) => {
-  	name = username;
-  	io.emit('chat message', `---${name} joined the chat---`);
+  socket.on('player-joined',function(msg){
+    socket.join(msg);
+  })
+  socket.on('room', (msg) => {
+    socket.to(msg.roomId).broadcast.emit(`room`, msg);         //sending message to all except the sender
   });
-  
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-    io.emit('chat message', `---${name} left the chat---`);
-    
-  });
-  socket.on('chat message', (msg) => {
-    socket.broadcast.emit('chat message', msg);         //sending message to all except the sender
-  });
+  socket.on('won',(msg)=>{
+    socket.to(msg.roomId).broadcast.emit('won',msg);
+  })
 });
 
 server.listen(3000, () => {
