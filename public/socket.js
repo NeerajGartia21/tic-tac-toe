@@ -1,4 +1,4 @@
-const socket=io();
+/* const socket=io();
 let turn;
 let roomId;
 let mySymbol;
@@ -17,6 +17,15 @@ let currentX = [];
 let currentO = [];
 let remaining = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+function multi(){
+    document.querySelector('.box').innerHTML=`
+    <h1>Tic Tac Toe</h1>
+    <button onclick="createRoom()" id="create-room">Create Room</button>
+
+	<input id="room-id" type="text" placeholder="room-id">
+	<button onclick="joinRoom()" id="join-room">Join Room</button>
+    `
+}
 
 function reset() {
     document.querySelector(".box").innerHTML = `<h1>Tic Tac Toe</h1>
@@ -37,6 +46,7 @@ function createRoom(){
     mySymbol='X';
     socket.emit('player-joined',roomId);
     document.querySelector('.box').innerHTML=`
+    <h1>Tic Tac Toe</h1>
     <div>
 		room id - ${roomId}
 	</div>
@@ -138,4 +148,4 @@ function check_sub_array(superarr, subarr) {
         }
     });
     return remainingarr;
-}
+} */
